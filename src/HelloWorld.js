@@ -32,7 +32,6 @@ class HelloWorld extends Component {
 			<div className="HelloWorld">
 				{this.state.greeting} {this.props.name}!
 				<br/>
-				
 				<button onClick={this.frenchify}>Frenchify!</button>
 			</div>
 		);
