@@ -12,13 +12,29 @@ class HelloWorld extends Component {
 		this.state = {
 			greeting: 'Holla'
 		};
+
+		// 'this' binds the this correctly in the frenchify function
+		this.frenchify = this.frenchify.bind(this);
+	}
+
+	// fernchify function
+	frenchify() {
+		this.setState({
+			greeting: 'Bonjour'
+		});
 	}
 
 	// class component in React needs the render() function
 	render () {
 		return (
 			// props.name now is this.props.name after extending class from React Components
-			<div className="HelloWorld">{this.state.greeting} {this.props.name}!</div>
+			// add button to change state
+			<div className="HelloWorld">
+				{this.state.greeting} {this.props.name}!
+				<br/>
+				
+				<button onClick={this.frenchify}>Frenchify!</button>
+			</div>
 		);
 	}
 };
